@@ -234,6 +234,14 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Set white spaces/tabs on
+vim.opt.list = true
+vim.opt.listchars = {tab = '>-', space = '.'}
+
+-- Set Tab Preferences
+vim.opt.expandtab = false
+vim.opt.tabstop = 4
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -272,6 +280,9 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
+
+--.Toggle white spaces/tabs
+vim.keymap.set({ 'n', 'v' }, '<Leader>l', ':set list!<CR>', { silent = true })
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
