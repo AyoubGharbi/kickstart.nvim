@@ -67,6 +67,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
+  -- EditorConfig Plugins
+  'editorconfig/editorconfig-vim',
+  
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
@@ -280,6 +283,9 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
+
+-- Format code with LSP
+vim.keymap.set('n', '<leader>f', ':Format<CR>', { desc = 'Format current buffer with LSP' })
 
 --.Toggle white spaces/tabs
 vim.keymap.set({ 'n', 'v' }, '<Leader>l', ':set list!<CR>', { silent = true })
