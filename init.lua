@@ -69,7 +69,7 @@ require('lazy').setup({
 
   -- EditorConfig Plugins
   'editorconfig/editorconfig-vim',
-  
+
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
