@@ -67,12 +67,13 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
-  -- EditorConfig Plugins
+  -- EditorConfig plugins
   'editorconfig/editorconfig-vim',
 
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'kdheepak/lazygit.nvim',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -283,6 +284,9 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
+
+-- Lazygit
+vim.api.nvim_set_keymap('n', '<leader>lg', ':LazyGit<CR>', { noremap = true, silent = true })
 
 -- Format code with LSP
 vim.keymap.set('n', '<leader>f', ':Format<CR>', { desc = 'Format current buffer with LSP' })
