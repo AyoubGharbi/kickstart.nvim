@@ -169,13 +169,19 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
+      requires = {
+          {'nvim-tree/nvim-web-devicons', opt = true}
       },
     },
+  },
+
+  {
+    -- Alpha nvim
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
   },
 
   {
