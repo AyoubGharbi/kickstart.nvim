@@ -226,6 +226,14 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  {
+    'kyazdani42/nvim-tree.lua',
+    -- Your additional configuration for nvim-tree if needed
+    opts = {
+        -- Your options here
+    },
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
