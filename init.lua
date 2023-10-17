@@ -75,7 +75,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -131,7 +131,7 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       requires = {
-          {'nvim-tree/nvim-web-devicons', opt = true}
+        { 'nvim-tree/nvim-web-devicons', opt = true }
       },
     },
   },
@@ -140,8 +140,8 @@ require('lazy').setup({
     -- Alpha nvim
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
+    config = function()
+      require 'alpha'.setup(require 'alpha.themes.startify'.config)
     end
   },
 
@@ -157,16 +157,14 @@ require('lazy').setup({
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-    -- add any options here
-  },
+    opts = {},
     dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    "MunifTanjim/nui.nvim",
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
     }
   },
 
@@ -206,9 +204,7 @@ require('lazy').setup({
   {
     'kyazdani42/nvim-tree.lua',
     -- Your additional configuration for nvim-tree if needed
-    opts = {
-        -- Your options here
-    },
+    opts = {},
   },
 }, {})
 
@@ -223,11 +219,11 @@ require("noice").setup({
   },
   -- you can enable a preset for easier configuration
   presets = {
-    bottom_search = true, -- use a classic bottom cmdline for search
-    command_palette = true, -- position the cmdline and popupmenu together
+    bottom_search = true,         -- use a classic bottom cmdline for search
+    command_palette = true,       -- position the cmdline and popupmenu together
     long_message_to_split = true, -- long messages will be sent to a split
-    inc_rename = false, -- enables an input dialog for inc-rename.nvim
-    lsp_doc_border = false, -- add a border to hover docs and signature help
+    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = false,       -- add a border to hover docs and signature help
   },
 })
 
@@ -237,7 +233,7 @@ require("noice").setup({
 
 -- Set white spaces/tabs on
 vim.opt.list = true
-vim.opt.listchars = {tab = '>-', space = '.'}
+vim.opt.listchars = { tab = '>-', space = '.' }
 
 -- Set Tab Preferences
 vim.opt.expandtab = false
@@ -351,7 +347,8 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
+      'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -423,10 +420,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
-  -- NOTE: Remember that lua is a real programming language, and as such it is possible
-  -- to define small helper and utility functions so you don't have to repeat yourself
-  -- many times.
-  --
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
@@ -562,6 +555,3 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
