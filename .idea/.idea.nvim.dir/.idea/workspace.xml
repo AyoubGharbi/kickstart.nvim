@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="486d2197-b064-4c09-9274-0a06148088de" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lua/plugins/telescope.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lua/plugins/treesitter.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.lua" beforeDir="false" afterPath="$PROJECT_DIR$/init.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lua/autocommands.lua" beforeDir="false" afterPath="$PROJECT_DIR$/lua/plugins/cmp.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lua/bootstrap.lua" beforeDir="false" afterPath="$PROJECT_DIR$/lua/bootstrap.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lua/keybindings/init.lua" beforeDir="false" afterPath="$PROJECT_DIR$/lua/keybindings/init.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lua/plugins/init.lua" beforeDir="false" afterPath="$PROJECT_DIR$/lua/plugins/lazy.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lua/settings/core.lua" beforeDir="false" afterPath="$PROJECT_DIR$/lua/settings/core.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lua/settings/editor.lua" beforeDir="false" afterPath="$PROJECT_DIR$/lua/settings/editor.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lua/settings/ui.lua" beforeDir="false" afterPath="$PROJECT_DIR$/lua/plugins/lsp.lua" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2WxPHc8FqhPDAwK8LuKXff5ugrj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Ayoub\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Ayoub\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\Ayoub\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="486d2197-b064-4c09-9274-0a06148088de" name="Changes" comment="" />
+      <created>1697671172204</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697671172204</updated>
+      <workItem from="1697671175394" duration="295000" />
+      <workItem from="1697671485253" duration="322000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

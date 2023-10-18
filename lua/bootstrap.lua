@@ -1,7 +1,3 @@
 require('settings.core')
 require('setup.packagemanager')
-require('plugins.init')
-require('settings.editor')
-require('settings.ui')
-require('keybindings.init')
-require('autocommands')
+require('plugins.lazy')
