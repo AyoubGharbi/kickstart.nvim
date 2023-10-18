@@ -9,24 +9,21 @@ vim.g.maplocalleader = ' '
 --    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
+  local success = pcall(vim.fn.system, {
     'git',
     'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
     '--branch=stable', -- latest stable release
     lazypath,
-  }
+  })
+  if not success then
+    print("Error cloning lazy.nvim")
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
 require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
 
   -- EditorConfig plugins
   'editorconfig/editorconfig-vim',
@@ -39,8 +36,6 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -159,11 +154,7 @@ require('lazy').setup({
     event = "VeryLazy",
     opts = {},
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
   },
@@ -203,14 +194,12 @@ require('lazy').setup({
 
   {
     'kyazdani42/nvim-tree.lua',
-    -- Your additional configuration for nvim-tree if needed
     opts = {},
   },
 }, {})
 
 require("noice").setup({
   lsp = {
-    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
       ["vim.lsp.util.stylize_markdown"] = true,
@@ -228,9 +217,6 @@ require("noice").setup({
 })
 
 -- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
-
 -- Set white spaces/tabs on
 vim.opt.list = true
 vim.opt.listchars = { tab = '>-', space = '.' }
@@ -277,7 +263,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
-
 -- Lazygit
 vim.api.nvim_set_keymap('n', '<leader>lg', ':LazyGit<CR>', { noremap = true, silent = true })
 
@@ -319,21 +304,21 @@ require('telescope').setup {
       '--column',
       '--smart-case'
     },
-    file_sorter =  require('telescope.sorters').get_fzy_sorter,
-    prompt_prefix = '> ',
-    color_devicons = true,
+    file_sorter       = require('telescope.sorters').get_fzy_sorter,
+    prompt_prefix     = '> ',
+    color_devicons    = true,
 
-    file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
-    grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
-    qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+    file_previewer    = require('telescope.previewers').vim_buffer_cat.new,
+    grep_previewer    = require('telescope.previewers').vim_buffer_vimgrep.new,
+    qflist_previewer  = require('telescope.previewers').vim_buffer_qflist.new,
 
-    extensions = {
+    extensions        = {
       fzy_native = {
         override_generic_sorter = false,
         override_file_sorter = true,
       },
     },
-    mappings = {
+    mappings          = {
       i = {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
@@ -365,17 +350,26 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 -- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
-    -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
-      'bash' },
+    ensure_installed = {
+      'c',
+      'cpp',
+      'c_sharp',
+      'go',
+      'lua',
+      'python',
+      'rust',
+      'tsx',
+      'javascript',
+      'typescript',
+      'vimdoc',
+      'vim',
+      'bash'
+    },
 
-    -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
-
     highlight = { enable = true },
     indent = { enable = true },
     incremental_selection = {
