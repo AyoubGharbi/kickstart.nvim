@@ -138,6 +138,9 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     ensure_installed = {
+      'regex',
+      'markdown',
+      'markdown_inline',
       'c',
       'cpp',
       'c_sharp',
