@@ -87,14 +87,9 @@ require('lazy').setup({
   { 'folke/which-key.nvim',  opts = {} },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.g.onedark_italic_comment = false
-      vim.cmd.colorscheme 'onedark'
-      vim.cmd [[highlight Comment cterm=NONE gui=NONE]]
-    end,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
   },
 
   {
@@ -178,10 +173,12 @@ require("noice").setup({
   },
   -- you can enable a preset for easier configuration
   presets = {
-    bottom_search = true, -- use a classic bottom cmdline for search
-    command_palette = true, -- position the cmdline and popupmenu together
+    bottom_search = true,         -- use a classic bottom cmdline for search
+    command_palette = true,       -- position the cmdline and popupmenu together
     long_message_to_split = true, -- long messages will be sent to a split
-    inc_rename = false, -- enables an input dialog for inc-rename.nvim
-    lsp_doc_border = false, -- add a border to hover docs and signature help
+    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = false,       -- add a border to hover docs and signature help
   },
 })
+
+vim.cmd.colorscheme "catppuccin"
