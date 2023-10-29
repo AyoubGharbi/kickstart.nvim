@@ -177,5 +177,16 @@ require("noice").setup({
   },
 })
 
+require 'lualine'.setup {
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 1
+      }
+    }
+  }
+}
+
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
