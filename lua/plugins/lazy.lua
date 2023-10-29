@@ -84,13 +84,9 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim',     opts = {} },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000
-  },
+  { "ellisonleao/gruvbox.nvim", priority = 1000,  config = true, opts = ... },
 
   {
     -- Set lualine as statusline
@@ -181,4 +177,5 @@ require("noice").setup({
   },
 })
 
-vim.cmd.colorscheme "catppuccin"
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
